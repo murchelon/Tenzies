@@ -62,6 +62,7 @@ function Tenzies() {
     React.useEffect(() => {
 
         setGameMode('WAIT');
+        console.log('ok')
 
     }, [])
 
@@ -368,7 +369,7 @@ function Tenzies() {
         <div className="App">
            
            
-           { gameMode === 'END_GAME' && <Confetti /> }
+           { gameMode === 'END_GAME' && <Confetti gravity={0.2} wind={0}  /> }
 
            <div className="logpanel"><pre>{log}</pre></div>
            <div className="backpanel">
@@ -389,7 +390,7 @@ function Tenzies() {
                     { gameMode === 'RUNNING' && <button className="app_button" onClick={rolarDados}>Rolar Dados!</button> }
                     { gameMode === 'END_GAME' && <button className="app_button" onClick={recomecar}>Jogar de Novo!</button> }
 
-                    {/* { <button className="app_button" onClick={runDebug}>Debug</button> } */}
+                    { <button className="app_button" onClick={runDebug}>Debug</button> }
 
                     <div className="result">
                         {outResults}
